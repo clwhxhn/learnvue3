@@ -6,6 +6,7 @@
 
     <button @click="addNum">加</button>
     <button @click="removeNum">减</button>
+    <button @click="shuffle">数字洗牌</button>
 
     <transition-group tag="p" name="why">
       <span v-for="item in numbers" :key="item" class="item">{{ item }}</span>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
   data() {
     return {
@@ -30,6 +32,9 @@ export default {
     },
     randomIndex() {
       return Math.floor(Math.random() * this.numbers.length)
+    },
+    shuffle() {
+      this.numbers = _.shuffle(this.numbers)
     }
   }
 }
