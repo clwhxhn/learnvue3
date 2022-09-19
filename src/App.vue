@@ -1,15 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+
+    <!-- 列表动画 -->
+    <t-g></t-g>
+  </div>
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/gsap数字动画/HelloWorld.vue'
+import TG from './components/transition-group列表动画/index.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    TG
   }
 }
 </script>
