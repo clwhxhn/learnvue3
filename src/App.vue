@@ -3,10 +3,10 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <!-- 列表动画 -->
-    <!-- <t-g></t-g> -->
+    <t-g></t-g>
 
     <!-- 列表加交错动画 -->
-    <t-g2></t-g2>
+    <!-- <t-g2></t-g2> -->
   </div>
  
 </template>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{message}}
     <div> 
       <img src="./a.png" alt="">
     </div>
@@ -16,13 +17,18 @@
 
 <script>
 import _ from 'lodash'
+import { demoMixin } from '@/mixins/demoMixin'
 export default {
+  setup(props, context) {
+    console.log('context: ', context);
+  },
   data() {
     return {
       numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       numCounter: 10
     }
   },
+  mixins: [demoMixin],
   methods: {
     addNum() {
       this.numbers.splice(this.randomIndex(), 0 , this.numCounter++)
