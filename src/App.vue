@@ -11,7 +11,17 @@
     <!-- reactive API 的使用 -->
     <!-- <s-t></s-t> -->
 
-    <r-e-f></r-e-f>
+    <!-- refApi的使用 -->
+    <!-- <r-e-f></r-e-f> -->
+
+    <!-- readonlyApi的使用 -->
+    <!-- <read-only></read-only> -->
+
+    <!-- toref和toRefs的使用 -->
+    <to-ref></to-ref>
+
+    <!-- hls视频播放 -->
+    <hls></hls>
   </div>
  
 </template>
@@ -22,6 +32,9 @@ import TG from './components/transition-group列表动画/index.vue'
 import TG2 from './components/列表的交错过度案例/index.vue'
 import ST from './components/setup使用/index.vue'
 import REF from './components/refApi的使用/index.vue'
+import ReadOnly from './components/readonlyApi的使用/index.vue'
+import ToRef from './components/toRef和toRefs的使用/index.vue'
+import Hls from './components/HLS播放视频/index.vue'
 
 export default {
   name: 'App',
@@ -30,7 +43,10 @@ export default {
     TG,
     TG2,
     ST,
-    REF
+    REF,
+    ReadOnly,
+    ToRef,
+    Hls
   }
 }
 </script>
