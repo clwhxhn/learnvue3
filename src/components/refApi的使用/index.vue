@@ -1,5 +1,6 @@
 <template>
   <div>
+    00
     <!-- 在template模板中使用ref对象，它会自动进行解包 -->
     counter: {{counter}}
     <br>  

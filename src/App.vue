@@ -18,10 +18,13 @@
     <!-- <read-only></read-only> -->
 
     <!-- toref和toRefs的使用 -->
-    <to-ref></to-ref>
+    <!-- <to-ref></to-ref> -->
 
     <!-- hls视频播放 -->
-    <hls></hls>
+    <!-- <hls></hls> -->
+
+    <!-- composition API 之 watch -->
+    <m-watch></m-watch>
   </div>
  
 </template>
@@ -35,6 +38,8 @@ import REF from './components/refApi的使用/index.vue'
 import ReadOnly from './components/readonlyApi的使用/index.vue'
 import ToRef from './components/toRef和toRefs的使用/index.vue'
 import Hls from './components/HLS播放视频/index.vue'
+import mWatch from './components/watch监听/index.vue'
+
 
 export default {
   name: 'App',
@@ -46,7 +51,8 @@ export default {
     REF,
     ReadOnly,
     ToRef,
-    Hls
+    Hls,
+    mWatch
   }
 }
 </script>
