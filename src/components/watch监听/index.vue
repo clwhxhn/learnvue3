@@ -1,6 +1,6 @@
 <template>
   <div>
-    我是父组件- {{ info }}
+    我是父000组件- {{ info }}
     <button @click="add">+</button>
     <hr />
     <myChild></myChild>
