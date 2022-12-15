@@ -1,8 +1,16 @@
+<!--
+ * @Author: wangxiaohui clwhxhn@163.com
+ * @Date: 2022-09-24 20:12:48
+ * @LastEditors: wangxiaohui clwhxhn@163.com
+ * @LastEditTime: 2022-12-15 16:01:29
+ * @FilePath: /learnvue3/src/App.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
-    <!-- 列表动画 -->
+    <!-- 列表动画0000 -->
     <!-- <t-g></t-g> -->
 
     <!-- 列表加交错动画 -->
