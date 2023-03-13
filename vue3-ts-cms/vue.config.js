@@ -14,15 +14,15 @@ module.exports = defineConfig({
   // },
 
   // 方式二
-  // configureWebpack: (config) => {
-  //   config.resolve.alias = {
-  //     '@': path.resolve('__dirname', 'src'),
-  //     components: '@/components',
-  //   }
-  // },
+  configureWebpack: (config) => {
+    config.resolve.alias = {
+      '@': path.resolve(__dirname, 'src'),
+      components: '@/components',
+    }
+  },
 
   //方式三(链式)
-  chainWebpack: (config) => {
-    config.resolve.alias.set('@', path.resolve('__dirname', 'src')).set('components', '@/components')
-  },
+  // chainWebpack: (config) => {
+  //   config.resolve.alias.set('@', path.resolve(__dirname, 'src')).set('components', '@/components')
+  // },
 })
