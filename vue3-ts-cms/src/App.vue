@@ -3,6 +3,8 @@
     <router-link to="/login">login</router-link>
     <router-link to="/main">main</router-link>
     {{ $store.state.name }}
+
+    <el-button>sss</el-button>
     <router-view></router-view>
   </div>
 </template>
