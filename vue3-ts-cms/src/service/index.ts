@@ -6,6 +6,7 @@ const hyRequest = new HYRequest({
   timeout: 10000,
   interceptors: {
     requestInterceptor: (config) => {
+      console.log(config);
       console.log('请求成功的拦截');
       return config
     },

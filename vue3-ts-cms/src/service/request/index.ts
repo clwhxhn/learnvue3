@@ -1,17 +1,7 @@
 import axios from "axios"
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios"
+import type { AxiosInstance  } from "axios"
+import type { HYRequestInterceptors, HYRequestConfig } from './type'
 
-// 定义接口
-interface HYRequestInterceptors {
-  requestInterceptor?: (config: any) => any
-  requestInterceptorCatch?: (error: any) => any
-  responseInterceptor?: (config: AxiosResponse) => AxiosResponse
-  responseInterceptorCatch?: (error: any) => any
-}
-
-interface HYRequestConfig extends AxiosRequestConfig {
-  interceptors?: HYRequestInterceptors
-}
 
 // 类的封装性比函数强
 class HYRequest {
