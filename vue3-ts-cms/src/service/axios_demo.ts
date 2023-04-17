@@ -2,10 +2,11 @@
  * @Author: wangxiaohui clwhxhn@163.com
  * @Date: 2023-03-15 10:28:12
  * @LastEditors: wangxiaohui clwhxhn@163.com
- * @LastEditTime: 2023-04-17 14:20:35
+ * @LastEditTime: 2023-04-17 16:24:49
  * @FilePath: \vue3-ts-cms\src\service\axios_demo.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+
 // import axios from 'axios' // 导入的其实就是axios的实例对象
 
 // axios.request({
@@ -35,5 +36,11 @@ import hyRequest  from './index'
 
 hyRequest.requestAction({
   url: '/home/multidata',
-  method: 'GET'
+  method: 'GET',
+  interceptors: {
+    requestInterceptor: (config) => {
+        console.log('单独请求的拦截');
+        return config
+    }
+  }
 })

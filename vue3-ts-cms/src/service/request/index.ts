@@ -13,7 +13,7 @@ class HYRequest {
     this.interceptors = config.interceptors
 
     // 拦截器（实现不同实例对应不同的拦截器）
-    this.instance.interceptors.request.use(
+    this.instance.interceptors.request.use( // 先添加的
       this.interceptors?.requestInterceptor,
       this.interceptors?.requestInterceptorCatch
     )
@@ -21,9 +21,25 @@ class HYRequest {
       this.interceptors?.responseInterceptor,
       this.interceptors?.responseInterceptorCatch
     )
+
+    // 添加所有实例都有的拦截器
+    this.instance.interceptors.request.use((config) => { // 后添加的先执行
+      console.log('所有实例，请求成功的拦截');
+      return config
+    },(error) => {
+      return error
+    })
+    this.instance.interceptors.response.use((res) => {
+      return res
+    },(error) => {
+      return error
+    })
   }
 
   requestAction(config: HYRequestConfig): void {
+    if(config.interceptors?.requestInterceptor){
+      config = config.interceptors.requestInterceptor(config)
+    }
     this.instance.request(config).then(res => {
       // return res.data
     })
