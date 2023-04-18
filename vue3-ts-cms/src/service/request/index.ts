@@ -36,12 +36,15 @@ class HYRequest {
     })
   }
 
-  requestAction(config: HYRequestConfig): void {
-    if(config.interceptors?.requestInterceptor){
-      config = config.interceptors.requestInterceptor(config)
-    }
-    this.instance.request(config).then(res => {
-      // return res.data
+  requestAction<T>(config: HYRequestConfig): Promise<T> {
+    return new Promise((resolve, reject) => {
+      if(config.interceptors?.requestInterceptor){
+        config = config.interceptors.requestInterceptor(config)
+      }
+      this.instance.request(config).then(res => {
+        // return res.data
+        resolve(res.data)
+      })
     })
   }
 }

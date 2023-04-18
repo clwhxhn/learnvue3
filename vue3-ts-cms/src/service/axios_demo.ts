@@ -43,6 +43,9 @@ hyRequest.requestAction({
         return config
     }
   }
+}).then(res => {
+  console.log('🚀🚀🚀🚀🚀🚀🚀🚀');
+  console.log(res);
 })
 
 
