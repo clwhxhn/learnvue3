@@ -59,6 +59,10 @@ export default defineComponent({
       console.log(isKeepPassword.value);
     }
 
+    const ceshiFun = () => {
+      alert('ceshiFun')
+    }
+
     const onFinishFailed = (errorInfo: any) => {
       console.log(errorInfo);
     }
@@ -67,7 +71,8 @@ export default defineComponent({
       formState,
       onFinish,
       onFinishFailed,
-      isKeepPassword
+      isKeepPassword,
+      ceshiFun
     }
   },
 })

@@ -1,19 +1,30 @@
 <template>
   <div class="login">
-    <login-account />
+    <login-account ref="accountRef" />
+
+    <button @click="login">0000</button>
   </div>
 </template>
 
 <script lang="ts">
 import LoginAccount from './components/login-account.vue'
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   components: {
     LoginAccount
   },
   setup() {
-    return {}
+    const accountRef = ref<InstanceType<typeof LoginAccount>>() // ()中没有传，accountRe可能是undefined，所以调用方法时使用 ?.
+
+    const login = () => {
+      accountRef.value?.ceshiFun()
+    }
+
+    return {
+      accountRef,
+      login
+    }
   },
 })
 </script>
