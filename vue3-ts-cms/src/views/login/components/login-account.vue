@@ -26,23 +26,22 @@
     </a-form-item>
 
     <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
-      <a-checkbox v-model:checked="formState.remember">Remember me</a-checkbox>
+      <a-checkbox v-model:checked="isKeepPassword">Remember me</a-checkbox>
     </a-form-item>
 
     <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
+      <a-button type="primary" html-type="submit">登录</a-button>
     </a-form-item>
   </a-form>
   </div>
 </template>
 
 <script lang='ts'>
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, ref } from 'vue'
 
 interface FormState {
   username: string;
   password: string;
-  remember: boolean;
 }
 
 export default defineComponent({
@@ -51,11 +50,13 @@ export default defineComponent({
     const formState = reactive<FormState>({
       username: '',
       password: '',
-      remember: true
     })
+
+    const isKeepPassword = ref(false)
 
     const onFinish = (values: any) => {
       console.log(values);
+      console.log(isKeepPassword.value);
     }
 
     const onFinishFailed = (errorInfo: any) => {
@@ -65,7 +66,8 @@ export default defineComponent({
     return {
       formState,
       onFinish,
-      onFinishFailed
+      onFinishFailed,
+      isKeepPassword
     }
   },
 })
