@@ -1,10 +1,10 @@
 <template>
   <div class="app">
-    <router-link to="/login">login</router-link>
+    <!-- <router-link to="/login">login</router-link>
     <router-link to="/main">main</router-link>
     {{ $store.state.name }}
 
-    <el-button>sss</el-button>
+    <el-button>sss</el-button> -->
     <router-view></router-view>
   </div>
 </template>
@@ -25,6 +25,9 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+html,body{
+  height: 100%;
 }
 </style>
