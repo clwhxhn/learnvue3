@@ -15,7 +15,7 @@ export default defineComponent({
     LoginAccount
   },
   setup() {
-    const accountRef = ref<InstanceType<typeof LoginAccount>>() // ()中没有传，accountRe可能是undefined，所以调用方法时使用 ?.
+    const accountRef = ref<InstanceType<typeof LoginAccount>>() // ()中没有传，所以accountRe可能是undefined，所以调用方法时使用 ?.
 
     const login = () => {
       accountRef.value?.ceshiFun()
