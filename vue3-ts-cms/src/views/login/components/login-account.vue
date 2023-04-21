@@ -38,6 +38,7 @@
 
 <script lang='ts'>
 import { defineComponent, reactive, ref } from 'vue'
+import ls from '@/utils/storage'
 
 interface FormState {
   username: string;
@@ -47,6 +48,10 @@ interface FormState {
 export default defineComponent({
 
   setup() {
+
+    ls.set('user' , 'zhangsan', 60*60*1000)
+    console.log(ls.get('user'));
+
     const formState = reactive<FormState>({
       username: '',
       password: '',
