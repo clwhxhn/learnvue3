@@ -1,8 +1,6 @@
 <template>
   <div class="login">
     <login-account ref="accountRef" />
-
-    <button @click="login">0000</button>
   </div>
 </template>
 
@@ -18,7 +16,7 @@ export default defineComponent({
     const accountRef = ref<InstanceType<typeof LoginAccount>>() // ()中没有传，所以accountRe可能是undefined，所以调用方法时使用 ?.
 
     const login = () => {
-      accountRef.value?.ceshiFun()
+      // accountRef.value?.ceshiFun()
     }
 
     return {

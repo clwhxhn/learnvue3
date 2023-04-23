@@ -37,8 +37,10 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, reactive, ref, getCurrentInstance } from 'vue'
 import ls from '@/utils/storage'
+
+
 
 interface FormState {
   username: string;
@@ -48,7 +50,6 @@ interface FormState {
 export default defineComponent({
 
   setup() {
-
     ls.set('user' , 'zhangsan', 60*60*1000)
     console.log(ls.get('user'));
 
@@ -62,10 +63,7 @@ export default defineComponent({
     const onFinish = (values: any) => {
       console.log(values);
       console.log(isKeepPassword.value);
-    }
 
-    const ceshiFun = () => {
-      alert('ceshiFun')
     }
 
     const onFinishFailed = (errorInfo: any) => {
@@ -77,7 +75,6 @@ export default defineComponent({
       onFinish,
       onFinishFailed,
       isKeepPassword,
-      ceshiFun
     }
   },
 })
