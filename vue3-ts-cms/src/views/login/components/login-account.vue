@@ -39,8 +39,7 @@
 <script lang='ts'>
 import { defineComponent, reactive, ref, getCurrentInstance } from 'vue'
 import ls from '@/utils/storage'
-
-
+import { useStore } from 'vuex';
 
 interface FormState {
   username: string;
@@ -50,6 +49,8 @@ interface FormState {
 export default defineComponent({
 
   setup() {
+    const store = useStore()
+
     ls.set('user' , 'zhangsan', 60*60*1000)
     console.log(ls.get('user'));
 
@@ -61,9 +62,12 @@ export default defineComponent({
     const isKeepPassword = ref(false)
 
     const onFinish = (values: any) => {
-      console.log(values);
-      console.log(isKeepPassword.value);
-
+      // console.log(values);
+      // console.log(isKeepPassword.value);
+      store.dispatch('login/accountLogin', {
+        name: values.username,
+        password: values.password
+      })
     }
 
     const onFinishFailed = (errorInfo: any) => {

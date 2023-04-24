@@ -3,7 +3,7 @@ import HYRequest from "./request";
 console.log(process.env)
 const hyRequest = new HYRequest({
   baseURL: process.env.VUE_APP_API_BASE_URL,
-  timeout: 10000,
+  timeout: 100000,
   interceptors: {
     requestInterceptor: (config) => {
       console.log(config);

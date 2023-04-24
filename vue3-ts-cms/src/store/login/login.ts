@@ -18,8 +18,10 @@ const loginModule: Module<ILoginState, IRootState> = {
     async accountLogin({commit}, payload: IAccount) {
       console.log('执行accountLogin',  payload);
       const res = await accountLoginRequest(payload)
+      console.log(res);
     }
   }
 }
 
 export default loginModule
+ 
