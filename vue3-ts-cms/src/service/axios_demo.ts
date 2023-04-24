@@ -2,7 +2,7 @@
  * @Author: wangxiaohui clwhxhn@163.com
  * @Date: 2023-03-15 10:28:12
  * @LastEditors: wangxiaohui clwhxhn@163.com
- * @LastEditTime: 2023-04-24 09:58:57
+ * @LastEditTime: 2023-04-24 10:48:54
  * @FilePath: \vue3-ts-cms\src\service\axios_demo.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -34,19 +34,19 @@
 // 调用封装的方法
 import hyRequest  from './index'
 
-// hyRequest.requestAction({
-//   url: '/home/multidata',
-//   method: 'GET',
-//   interceptors: {
-//     requestInterceptor: (config) => {
-//         console.log('单独请求的拦截');
-//         return config
-//     }
-//   }
-// }).then(res => {
-//   console.log('🚀🚀🚀🚀🚀🚀🚀🚀');
-//   console.log(res);
-// })
+hyRequest.requestAction({
+  url: '/home/multidata',
+  method: 'GET',
+  interceptors: {
+    requestInterceptor: (config) => {
+        console.log('单独请求的拦截');
+        return config
+    }
+  }
+}).then(res => {
+  console.log('🚀🚀🚀🚀🚀🚀🚀🚀');
+  console.log(res);
+})
 
 
 function loge(messag){
