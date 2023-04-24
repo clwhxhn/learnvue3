@@ -34,19 +34,19 @@
 // 调用封装的方法
 import hyRequest  from './index'
 
-hyRequest.requestAction({
-  url: '/home/multidata',
-  method: 'GET',
-  interceptors: {
-    requestInterceptor: (config) => {
-        console.log('单独请求的拦截');
-        return config
-    }
-  }
-}).then(res => {
-  console.log('🚀🚀🚀🚀🚀🚀🚀🚀');
-  console.log(res);
-})
+// hyRequest.requestAction({
+//   url: '/home/multidata',
+//   method: 'GET',
+//   interceptors: {
+//     requestInterceptor: (config) => {
+//         console.log('单独请求的拦截');
+//         return config
+//     }
+//   }
+// }).then(res => {
+//   console.log('🚀🚀🚀🚀🚀🚀🚀🚀');
+//   console.log(res);
+// })
 
 
 function loge(messag){
