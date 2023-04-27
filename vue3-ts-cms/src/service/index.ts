@@ -1,3 +1,4 @@
+import ls from '@/utils/storage'
 // service统一出口
 import HYRequest from "./request";
 console.log(process.env)
@@ -8,7 +9,7 @@ const hyRequest = new HYRequest({
     requestInterceptor: (config) => {
       console.log(config);
       console.log('请求成功的拦截');
-      const token = ''
+      const token = ls.get('token') // 从缓存中拿token
       if(!token){
         config.headers.Authorization = `Bearer ${token}`
       }

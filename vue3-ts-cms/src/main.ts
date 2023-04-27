@@ -8,6 +8,7 @@ import router from './router'
 import store from './store'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import { setupStore } from '@/store/index'
 
 
 // 全局引入element-plus
@@ -29,6 +30,10 @@ app.use(Antd)
 
 app.use(router)
 app.use(store)
+
+// 初始化store中的数据
+setupStore()
+
 // app.use(ElementPlus)
 app.mount('#app')
 

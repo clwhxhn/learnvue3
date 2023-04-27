@@ -51,9 +51,6 @@ export default defineComponent({
   setup() {
     const store = useStore()
 
-    ls.set('user' , 'zhangsan', 60*60*1000)
-    console.log(ls.get('user'));
-
     const formState = reactive<FormState>({
       username: '',
       password: '',

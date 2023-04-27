@@ -18,4 +18,9 @@ const store = createStore<IRootState>({
   }
 })
 
+// 对store中的数据进行初始化
+export function setupStore() {
+  store.dispatch('login/loadLocalLogin')
+}
+
 export default store
