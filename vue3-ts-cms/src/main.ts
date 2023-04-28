@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { createPinia } from 'pinia'
 
 import 'normalize.css'
 import './service/axios_demo'
@@ -10,6 +11,7 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import { setupStore } from '@/store/index'
 
+const pinia = createPinia()
 
 // 全局引入element-plus
 // import ElementPlus from 'element-plus'
@@ -27,9 +29,9 @@ const app = createApp(App)
 registerApp(app)
 
 app.use(Antd)
-
 app.use(router)
 app.use(store)
+app.use(pinia)
 
 // 初始化store中的数据
 setupStore()
