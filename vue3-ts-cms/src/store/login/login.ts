@@ -56,12 +56,12 @@ const loginModule: Module<ILoginState, IRootState> = {
           id: 1,
           name: '系统管理',
           sort: 2,
-          url: '/main/system'
+          url: '/main/system',
+          type: 2
         }
       ]
       commit('changeUserMenus', userMenus)
       ls.set('userMenus', userMenus)
-      alert(1)
 
       router.push('/main') // 跳转到首页
     },

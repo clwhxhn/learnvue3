@@ -19,5 +19,5 @@
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"], // 当前哪些代码是需要通过ts编译解析的
-  "exclude": ["node_modules"] // 排除 
+  "exclude": ["node_modules"], // 排除
 }

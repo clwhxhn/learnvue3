@@ -9,24 +9,30 @@
         theme="dark"
         :inline-collapsed="collapsed"
       >
-        <a-menu-item key="1">
-          <template #icon>
-            <PieChartOutlined />
+        <template v-for="item in userMenus" :key="item.id">
+          <template v-if="item.type === 1">
           </template>
-          <span>Option 1</span>
-        </a-menu-item>
+          <template v-if="item.type === 2">
+            <a-menu-item>
+              <span>{{ item.name }}</span>
+            </a-menu-item>
+          </template>
+        </template>
+
         <a-menu-item key="2">
           <template #icon>
             <DesktopOutlined />
           </template>
           <span>Option 2</span>
         </a-menu-item>
+
         <a-menu-item key="3">
           <template #icon>
             <InboxOutlined />
           </template>
           <span>Option 3</span>
         </a-menu-item>
+
         <a-sub-menu key="sub1">
           <template #icon>
             <MailOutlined />
@@ -37,6 +43,7 @@
           <a-menu-item key="7">Option 7</a-menu-item>
           <a-menu-item key="8">Option 8</a-menu-item>
         </a-sub-menu>
+
         <a-sub-menu key="sub2">
           <template #icon>
             <AppstoreOutlined />
@@ -55,7 +62,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, reactive, toRefs, watch, computed} from 'vue'
+import { defineComponent, reactive, toRefs, watch, computed } from 'vue'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -64,7 +71,7 @@ import {
   DesktopOutlined,
   InboxOutlined,
   AppstoreOutlined,
-} from '@ant-design/icons-vue';
+} from '@ant-design/icons-vue'
 
 // import { useStore } from 'vuex';
 import { useStore } from '@/store/index' // 使用二次封装的useStore
@@ -80,11 +87,9 @@ export default defineComponent({
     AppstoreOutlined,
   },
   setup() {
-
     const store = useStore()
     const userMenus = computed(() => store.state.login.userMenus) // 计算属性
-    console.log('userMenus11: ', userMenus.value);
-
+    console.log('userMenus11: ', userMenus.value)
 
     const state = reactive({
       collapsed: false,
@@ -107,14 +112,14 @@ export default defineComponent({
     return {
       ...toRefs(state),
       toggleCollapsed,
-      userMenus
+      userMenus,
     }
   },
 })
 </script>
 
 <style lang = "less" scoped>
-.logo{
+.logo {
   height: 60px;
 }
 </style>
