@@ -58,6 +58,13 @@ const loginModule: Module<ILoginState, IRootState> = {
           sort: 2,
           url: '/main/system',
           type: 2
+        },
+        {
+          id: 2,
+          name: '系统管理2',
+          sort: 3,
+          url: '/main/system',
+          type: 2
         }
       ]
       commit('changeUserMenus', userMenus)
