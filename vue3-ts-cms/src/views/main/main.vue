@@ -2,10 +2,12 @@
   <div class="main">
     <a-layout>
       <a-layout-sider style="height: 100vh">
-        <NavMenu></NavMenu>
+        <NavMenu :isFold="isFold"></NavMenu>
       </a-layout-sider>
       <a-layout>
-        <a-layout-header>Header</a-layout-header>
+        <a-layout-header>
+          <Navheader @foldChange="handleFoldChange"></Navheader>
+        </a-layout-header>
         <a-layout-content style="height: 100%">Content</a-layout-content>
       </a-layout>
     </a-layout>
@@ -13,16 +15,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 import NavMenu from '@/components/nav-menu'
+import Navheader from '@/components/nav-header'
 
 export default defineComponent({
   components: {
-    NavMenu
+    NavMenu,
+    Navheader,
   },
   setup() {
-    return {}
+    const isFold = ref(false)
+    const handleFoldChange = (_isFold: boolean) => {
+      console.log('_isFold: ', _isFold)
+      isFold.value = _isFold
+    }
+    return {
+      isFold,
+      handleFoldChange,
+    }
   },
 })
 </script>

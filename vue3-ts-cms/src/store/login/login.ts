@@ -27,6 +27,10 @@ const loginModule: Module<ILoginState, IRootState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus
+
+      // 动态酷游配置：
+      // 1、userMenus 映射到 routes中（根据返回的菜单动态生成路由）
+      // 2、再将 routes 添加到 router.main.children中
     }
   },
   actions: {

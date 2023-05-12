@@ -9,12 +9,20 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/login',
+    name: 'login',
     component: () => import('@/views/login/login.vue'),
   },
   {
     path: '/main',
+    name: 'main',
     component: () => import('@/views/main/main.vue'),
+    // children: [] // 根据菜单 - 动态加载路由
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('@/views/not-found/index.vue')
+  }
 ]
 
 const router = createRouter({

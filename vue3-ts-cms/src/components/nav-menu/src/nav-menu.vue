@@ -1,15 +1,10 @@
 <template>
-  <div class="nav-menu">
-    <div class="logo" @click="toggleCollapsed">clear</div>
-    <a-layout style="min-height: 100vh">
-      <a-layout-sider v-model:collapsed="collapsed" collapsible>
+  <a-layout style="min-height: 100vh">
+    <a-layout-sider v-model:collapsed="collapsed" collapsible>
+      <div class="nav-menu">
+        <div class="logo" @click="toggleCollapsed">clear{{ isFold }}</div>
         <div>
-          <a-menu
-            v-model:openKeys="openKeys"
-            v-model:selectedKeys="selectedKeys"
-            mode="inline"
-            theme="dark"
-          >
+          <a-menu v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" mode="inline" theme="dark">
             <template v-for="item in userMenus" :key="item.id">
               <template v-if="item.type === 1"> </template>
               <template v-if="item.type === 2">
@@ -58,9 +53,9 @@
             </a-sub-menu>
           </a-menu>
         </div>
-      </a-layout-sider>
-    </a-layout>
-  </div>
+      </div>
+    </a-layout-sider>
+  </a-layout>
 </template>
 
 <script lang='ts'>
@@ -89,6 +84,12 @@ export default defineComponent({
     DesktopOutlined,
     InboxOutlined,
     AppstoreOutlined,
+  },
+  props: {
+    isFold: {
+      type: Boolean,
+      default: false
+    }
   },
   setup() {
     const store = useStore()
